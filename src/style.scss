@@ -376,3 +376,21 @@ html .clear-completed:active {
     bottom: 10px;
   }
 }
+.erros-list {
+  position: absolute;
+  top: 100%;
+  padding-top: 10px;
+  left: 0;
+  right: 0;
+
+  .error {
+    background: #ae241b;
+    border-radius: 3px;
+    color: white;
+    box-shadow: 0 0 2px black;
+    margin-bottom: 5px;
+
+    text-align: center;
+  }
+}
+
