@@ -22,7 +22,8 @@ const state = {
             id: 8
         },
     ],
-    totalActive: 2
+    totalActive: 2,
+    errors: []
 };
 
 let stateMiddleware = store => next => action => {

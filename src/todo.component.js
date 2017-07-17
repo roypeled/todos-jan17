@@ -43,7 +43,7 @@ class Todo extends React.Component {
                           onBlur={ () => this.saveLabel() } />;
         else
             return (<label onDoubleClick={ ()=> this.setEdit(true) }>
-                        { this.state.label }
+                        { this.props.label }
                     </label>);
     }
 

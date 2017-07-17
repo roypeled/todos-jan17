@@ -22,9 +22,19 @@ export function setAllTodoCompleted(isCompleted){
 }
 
 export function updateTodoLabel(id, label){
-    return { type: Constants.UPDATE_TODO_LABEL, id, label }
+    return (dispatch) => {
+        if(!label)
+            return;
+
+        dispatch( { type: Constants.UPDATE_TODO_LABEL, id, label } );
+    }
 }
 
 export function clearCompleted(){
     return { type: Constants.CLEAR_COMPLETED }
+}
+
+
+export function sendError(msg){
+    return { type: Constants.ERROR, msg };
 }
