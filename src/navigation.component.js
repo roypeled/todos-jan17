@@ -1,6 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
 import {clearCompleted} from "./actions";
+import {NavLink} from "react-router-dom";
+import {withRouter} from "react-router";
 
 class Navigation extends React.Component {
 
@@ -14,11 +16,11 @@ class Navigation extends React.Component {
                     <span> left</span>
                 </span>
                 <ul className="filters">
-                    <li><a className="selected">All</a></li>
+                    <li><NavLink to="/all" activeClassName="selected">All</NavLink></li>
                     <span> </span>
-                    <li><a className="">Active</a></li>
+                    <li><NavLink to="/active" activeClassName="selected">Active</NavLink></li>
                     <span> </span>
-                    <li><a className="">Completed</a>
+                    <li><NavLink to="/completed" activeClassName="selected">Completed</NavLink>
                     </li>
                 </ul>
                 <button onClick={ ()=> this.props.clearCompleted() } className="clear-completed">Clear completed</button>
@@ -39,4 +41,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Navigation));

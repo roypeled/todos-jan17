@@ -1,7 +1,12 @@
 import * as Constants from "./constants";
 
 export function addTodo(label){
-    return { type: Constants.ADD_TODO, label }
+    return (dispatch) => {
+        if(!label)
+            return;
+
+        dispatch( { type: Constants.ADD_TODO, label } );
+    }
 }
 
 export function removeTodo(id){
