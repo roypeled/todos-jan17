@@ -1,0 +1,83 @@
+#main {
+  perspective: 2000px;
+
+}
+
+.todoapp {
+
+  &.todoapp-appear {
+    transition: transform 500ms;
+
+    transform: rotateX(-90deg);
+    transform-origin: top;
+
+    &.todoapp-appear-active {
+      transform: rotateX(0);
+    }
+  }
+
+}
+
+h1 {
+  &.logo-appear {
+    transition: 500ms opacity 500ms;
+
+    opacity: 0;
+
+    &.logo-appear-active {
+      opacity: 1;
+    }
+  }
+}
+
+
+.todo-enter, .todo-leave {
+  transition: all 300ms;
+  overflow: hidden;
+}
+
+.todo-appear {
+  transition: 500ms all 500ms;
+
+  opacity: 0;
+
+  &.todo-appear-active {
+    opacity: 1;
+  }
+}
+
+.todo-enter {
+  height: 0;
+
+  &.todo-enter-active {
+    height: 59px;
+  }
+}
+
+.todo-leave {
+  height: 59px;
+
+  &.todo-leave-active {
+    height: 0;
+  }
+}
+
+.fade-appear, .fade-enter, .fade-leave {
+  transition: opacity 300ms;
+}
+
+.fade-enter, .fade-appear {
+  opacity: 0;
+
+  &.fade-appear-active, &.fade-enter-active {
+    opacity: 1;
+  }
+}
+
+.fade-leave {
+  opacity: 1;
+
+  &.fade-leave-active {
+    opacity: 0;
+  }
+}

@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {clearCompleted} from "./actions";
 import {NavLink} from "react-router-dom";
 import {withRouter} from "react-router";
+import Fade from "./Fade";
 
 class Navigation extends React.Component {
 
@@ -15,14 +16,16 @@ class Navigation extends React.Component {
                     <span>items</span>
                     <span> left</span>
                 </span>
-                <ul className="filters">
-                    <li><NavLink to="/all" activeClassName="selected">All</NavLink></li>
-                    <span> </span>
-                    <li><NavLink to="/active" activeClassName="selected">Active</NavLink></li>
-                    <span> </span>
-                    <li><NavLink to="/completed" activeClassName="selected">Completed</NavLink>
-                    </li>
-                </ul>
+                <Fade>
+                    <ul className="filters">
+                        <li><NavLink to="/all" activeClassName="selected">All</NavLink></li>
+                        <span> </span>
+                        <li><NavLink to="/active" activeClassName="selected">Active</NavLink></li>
+                        <span> </span>
+                        <li><NavLink to="/completed" activeClassName="selected">Completed</NavLink>
+                        </li>
+                    </ul>
+                </Fade>
                 <button onClick={ ()=> this.props.clearCompleted() } className="clear-completed">Clear completed</button>
             </footer>
         )

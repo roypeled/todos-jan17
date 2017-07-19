@@ -6,6 +6,7 @@ import App from "./app.component";
 import {BrowserRouter} from "react-router-dom";
 
 import "./style.scss";
+import "./animatoins.scss";
 
 ReactDOM.render(
     <Provider store={store}>
